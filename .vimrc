@@ -178,7 +178,6 @@
 
 	function! RunKeyCommand(key, mode)
 		let s:command = g:yvt["keymap"][a:key][a:mode]
-		echo s:command
 		return s:command
 	endfunction
 
