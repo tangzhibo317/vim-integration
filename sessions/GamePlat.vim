@@ -2,11 +2,11 @@ let SessionLoad = 1
 if &cp | set nocp | endif
 let s:cpo_save=&cpo
 set cpo&vim
-inoremap <silent> <Plug>(neocomplcache_start_omni_complete) 
-inoremap <silent> <Plug>(neocomplcache_start_auto_complete_no_select) 
-inoremap <silent> <Plug>(neocomplcache_start_auto_complete) =neocomplcache#mappings#popup_post()
-inoremap <silent> <expr> <Plug>(neocomplcache_start_unite_quick_match) unite#sources#neocomplcache#start_quick_match()
 inoremap <silent> <expr> <Plug>(neocomplcache_start_unite_complete) unite#sources#neocomplcache#start_complete()
+inoremap <silent> <expr> <Plug>(neocomplcache_start_unite_quick_match) unite#sources#neocomplcache#start_quick_match()
+inoremap <silent> <Plug>(neocomplcache_start_auto_complete) =neocomplcache#mappings#popup_post()
+inoremap <silent> <Plug>(neocomplcache_start_auto_complete_no_select) 
+inoremap <silent> <Plug>(neocomplcache_start_omni_complete) 
 inoremap <silent> <SNR>45_AutoPairsReturn =AutoPairsReturn()
 map  :NERDTreeToggle
 nnoremap <silent>  :CtrlP
@@ -80,15 +80,14 @@ set tabstop=4
 let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
 let v:this_session=expand("<sfile>:p")
 silent only
-cd /project/www/tx-http/wwwroot
+cd /project/www/tx-http/wwwroot_
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
 badd +1 index.php
-badd +21 Tx/Plat/Service/MessageService.class.php
-badd +5 Tx/Plat/Model/MessageModel.class.php
-badd +1 Tx/Plat/Model/PlayerModel.class.php
+badd +1 Tx/Plat/Service/MessageService.class.php
+badd +81 Tx/Plat/Common/error.php
 args index.php
 edit Tx/Plat/Service/MessageService.class.php
 set splitbelow splitright
@@ -118,8 +117,8 @@ nnoremap <buffer> <silent>  :call nerdtree#ui_glue#invokeKeyMap(g:NERDTreeMapA
 nnoremap <buffer> <silent> ? :call nerdtree#ui_glue#invokeKeyMap("?")
 nnoremap <buffer> <silent> A :call nerdtree#ui_glue#invokeKeyMap("A")
 nnoremap <buffer> <silent> B :call nerdtree#ui_glue#invokeKeyMap("B")
-nnoremap <buffer> <silent> CD :call nerdtree#ui_glue#invokeKeyMap("CD")
 nnoremap <buffer> <silent> C :call nerdtree#ui_glue#invokeKeyMap("C")
+nnoremap <buffer> <silent> CD :call nerdtree#ui_glue#invokeKeyMap("CD")
 inoremap <buffer> <silent> î :call AutoPairsJump()a
 inoremap <buffer> <silent> <expr> ð AutoPairsToggle()
 inoremap <buffer> <silent> â =AutoPairsBackInsert()
@@ -138,9 +137,9 @@ nnoremap <buffer> <silent> X :call nerdtree#ui_glue#invokeKeyMap("X")
 nnoremap <buffer> <silent> cd :call nerdtree#ui_glue#invokeKeyMap("cd")
 nnoremap <buffer> <silent> e :call nerdtree#ui_glue#invokeKeyMap("e")
 nnoremap <buffer> <silent> f :call nerdtree#ui_glue#invokeKeyMap("f")
-nnoremap <buffer> <silent> gi :call nerdtree#ui_glue#invokeKeyMap("gi")
-nnoremap <buffer> <silent> gs :call nerdtree#ui_glue#invokeKeyMap("gs")
 nnoremap <buffer> <silent> go :call nerdtree#ui_glue#invokeKeyMap("go")
+nnoremap <buffer> <silent> gs :call nerdtree#ui_glue#invokeKeyMap("gs")
+nnoremap <buffer> <silent> gi :call nerdtree#ui_glue#invokeKeyMap("gi")
 nnoremap <buffer> <silent> i :call nerdtree#ui_glue#invokeKeyMap("i")
 nnoremap <buffer> <silent> m :call nerdtree#ui_glue#invokeKeyMap("m")
 nnoremap <buffer> <silent> o :call nerdtree#ui_glue#invokeKeyMap("o")
@@ -151,9 +150,9 @@ nnoremap <buffer> <silent> s :call nerdtree#ui_glue#invokeKeyMap("s")
 nnoremap <buffer> <silent> t :call nerdtree#ui_glue#invokeKeyMap("t")
 nnoremap <buffer> <silent> u :call nerdtree#ui_glue#invokeKeyMap("u")
 nnoremap <buffer> <silent> x :call nerdtree#ui_glue#invokeKeyMap("x")
-nnoremap <buffer> <silent> <2-LeftMouse> :call nerdtree#ui_glue#invokeKeyMap("<2-LeftMouse>")
-nnoremap <buffer> <silent> <LeftRelease> <LeftRelease>:call nerdtree#ui_glue#invokeKeyMap("<LeftRelease>")
 nnoremap <buffer> <silent> <MiddleRelease> :call nerdtree#ui_glue#invokeKeyMap("<MiddleRelease>")
+nnoremap <buffer> <silent> <LeftRelease> <LeftRelease>:call nerdtree#ui_glue#invokeKeyMap("<LeftRelease>")
+nnoremap <buffer> <silent> <2-LeftMouse> :call nerdtree#ui_glue#invokeKeyMap("<2-LeftMouse>")
 inoremap <buffer> <silent>  =AutoPairsDelete()
 inoremap <buffer> <silent>   =AutoPairsSpace()
 inoremap <buffer> <silent> " =AutoPairsInsert('"')
@@ -317,7 +316,7 @@ setlocal commentstring=/*%s*/
 setlocal complete=.,w,b,u,t,i
 setlocal concealcursor=
 setlocal conceallevel=0
-setlocal completefunc=neocomplcache#complete#auto_complete
+setlocal completefunc=neocomplcache#complete#manual_complete
 setlocal nocopyindent
 setlocal cryptmethod=
 setlocal nocursorbind
@@ -402,11 +401,11 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 21 - ((20 * winheight(0) + 23) / 47)
+let s:l = 126 - ((39 * winheight(0) + 23) / 47)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-21
+126
 normal! 0
 wincmd w
 argglobal
@@ -520,7 +519,7 @@ setlocal nospell
 setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
 setlocal spellfile=
 setlocal spelllang=en
-setlocal statusline=%#airline_a_inactive#\ Tagbar\ %#airline_a_to_airline_b_inactive#%#airline_b_inactive#\ Name\ %#airline_b_to_airline_c_inactive#%#airline_c_inactive#\ IndexController.class.php\ 
+setlocal statusline=%#airline_a_inactive#\ Tagbar\ %#airline_a_to_airline_b_inactive#%#airline_b_inactive#\ Name\ %#airline_b_to_airline_c_inactive#%#airline_c_inactive#\ MessageModel.class.php\ 
 setlocal suffixesadd=
 setlocal noswapfile
 setlocal synmaxcol=3000
