@@ -21,7 +21,7 @@
 		"关闭窗口时关闭
 		autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif"""")""))
 		"设置窗口宽度
-		let NERDTreeWinSize=18
+		let NERDTreeWinSize=28
 
 	"TagBar
 		Plugin 'https://github.com/majutsushi/tagbar.git'
