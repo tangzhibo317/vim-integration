@@ -166,19 +166,24 @@
 		let yvt.keymap["ghn"] = {"nmap": ":TagbarToggle<CR>", "imap": "<Esc>l:TagbarToggle<CR>"}
 
 
+	function! GetKeyCommand(key, mode)
+		let s:command = g:yvt["keymap"][a:key][a:mode]
+		return s:command
+	endfunction
+
+	function! RunKeyCommand(key, mode)
+		let s:command = a:mode . " <C-n> " . a:key
+		exe s:command
+	endfunction
+
 	function! BindKeyMap()
 		for key in keys(g:yvt["keymap"])
 			let s:keymap = g:yvt["keymap"][key]
 			for mode in keys(s:keymap)
-				let s:execommand = mode . " " . key . " " . RunKeyCommand(key, mode)
+				let s:execommand = mode . " " . key . " " . GetKeyCommand(key, mode) . ":call RunKeyCommand('" . key . "','" .  mode . "')<CR>"
 				exe s:execommand
 			endfor
 		endfor
-	endfunction
-
-	function! RunKeyCommand(key, mode)
-		let s:command = g:yvt["keymap"][a:key][a:mode]
-		return s:command
 	endfunction
 
 	autocmd VimEnter * call BindKeyMap()
