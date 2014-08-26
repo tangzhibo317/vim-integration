@@ -89,10 +89,13 @@
 	let g:solarized_termcolors=256
 	set t_Co=256
 	set background=dark
-	colorscheme Tomorrow-Night-Eighties 
+	"colorscheme Tomorrow-Night-Eighties
+	colorscheme Tomorrow-Night
 
 
 "Default
+	"设置折叠方式
+	set fdm=indent
 	"设置搜索忽略大小写
 	set ignorecase
 	"设置背景色，每种配色有两种方案，一个light、一个dark "
