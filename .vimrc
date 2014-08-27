@@ -90,6 +90,7 @@
 	set t_Co=256
 	set background=dark
 	"colorscheme Tomorrow-Night-Eighties
+	"colorscheme blackdust
 	colorscheme Tomorrow-Night
 
 
@@ -125,7 +126,7 @@
 		let yvt = {}
 		let yvt.keymap = {}
 		"将jj映射为Esc键"
-		let yvt.keymap["jj"] = {"cmap": "<Esc>l", "imap": "<Esc>"}
+		"let yvt.keymap["jj"] = {"cmap": "<Esc>l", "imap": "<Esc>"}
 		"移动当前行到下一行"
 		let yvt.keymap["gjj"] = {"nmap": "ddp", "imap": "<Esc>lddpi"}
 		"移动当前行到上一行"
@@ -188,5 +189,19 @@
 			endfor
 		endfor
 	endfunction
+
+	command! BcloseOthers call <SID>BufCloseOthers()
+	function! <SID>BufCloseOthers()
+		let l:currentBufNum   = bufnr("%")
+		let l:alternateBufNum = bufnr("#")
+		for i in range(1,bufnr("$"))
+			if buflisted(i)
+				if i!=l:currentBufNum
+					execute("bdelete ".i)
+				endif
+			endif
+		endfor
+	endfunction
+	map <leader>bdo :BcloseOthers<cr>
 
 	autocmd VimEnter * call BindKeyMap()
