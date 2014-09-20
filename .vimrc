@@ -94,6 +94,9 @@
 
 
 "Default
+	"设置文件编码兼容gbk等格式
+	let &termencoding=&encoding
+	set fileencodings=utf-8,gb18030,gbk,gb2312,big5
 	"设置折叠方式
 	set fdm=indent
 	"设置搜索忽略大小写
