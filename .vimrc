@@ -95,6 +95,15 @@
 
 
 "Default
+	"显示光标当前位置
+	set ruler
+	"高亮显示当前行/列
+	set cursorline
+	"set cursorcolumn
+	"高亮显示搜索结果
+	set hlsearch
+	"禁止折行
+	"set nowrap
 	"设置文件编码兼容gbk等格式
 	let &termencoding=&encoding
 	set fileencodings=utf-8,gb18030,gbk,gb2312,big5
@@ -166,6 +175,7 @@
 		let yvt.keymap["gfl"] = {"nmap": "<C-w>l", "imap": "<Esc>l<C-w>l"}
 		let yvt.keymap["gfm"] = {"nmap": ":bp!<CR>", "imap": "<Esc>l:bp!<CR>"}
 		let yvt.keymap["gfn"] = {"nmap": ":bn!<CR>", "imap": "<Esc>l:bn!<CR>"}
+		let yvt.keymap["gfo"] = {"nmap": ":BcloseOthers<CR>"}
 	"工具
 		let yvt.keymap["ghs"] = {"nmap": "\:!find . -name \"*.swp\" \\| xargs rm -fj<CR>:!find . -name \"*.swo\" \\| xargs rm -fj"}
 		"开启/关闭Tree控件"
