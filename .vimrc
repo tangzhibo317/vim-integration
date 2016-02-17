@@ -30,6 +30,7 @@
 		"autocmd VimEnter * TagbarToggle 
 
 	"AirLine
+	"需要安装powerline字体"
 		Plugin 'https://github.com/bling/vim-airline.git'
 		"颜色
 		set t_Co=256
@@ -66,7 +67,20 @@
 		Plugin 'https://github.com/jiangmiao/auto-pairs.git'
 
 	"Ack"
+	"系统中需要安装Ack"
 		Plugin 'https://github.com/mileszs/ack.vim.git'
+
+	"DoxygenToolkit"
+		Plugin 'https://github.com/vim-scripts/DoxygenToolkit.vim.git'
+
+		let g:DoxygenToolkit_briefTag_pre="@Synopsis  "
+		let g:DoxygenToolkit_paramTag_pre="@Param "
+		let g:DoxygenToolkit_returnTag="@Returns   "
+		let g:DoxygenToolkit_blockHeader=""
+		let g:DoxygenToolkit_blockFooter=""
+		let g:DoxygenToolkit_authorName="Mathias Lorente"
+		let g:DoxygenToolkit_licenseTag="My own license"
+
 
 	" All of your Plugins must be added before the following line
 	call vundle#end()            " required
