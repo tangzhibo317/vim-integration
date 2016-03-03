@@ -29,3 +29,6 @@
 [submodule "ack.vim"]
 	path = bundle/ack.vim
 	url = https://github.com/mileszs/ack.vim.git
+[submodule "bundle/vim-phpfmt"]
+	path = bundle/vim-phpfmt
+	url = https://github.com/phpfmt/vim-phpfmt.git
