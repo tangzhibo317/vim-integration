@@ -65,16 +65,6 @@
 
     "AutoPairs"
         Plugin 'https://github.com/jiangmiao/auto-pairs.git'
-    "PhpFmt"
-        Plugin 'https://github.com/phpfmt/vim-phpfmt.git'
-
-        let g:phpfmt_on_save = get(g:, 'phpfmt_on_save', 1) " format on save (autocmd)
-        let g:phpfmt_php_path = "/usr/local/php5/bin/php"               " Path to PHP
-        "let g:phpfmt_prepasses_list = "AutoPreincrement,JointToImplode"
-        ""let g:phpfmt_passes_list = "ReturnNull"
-        let g:phpfmt_enable_default_mapping = 1     " Enable the mapping by default (<leader>pcd)"
-        "缩进的空格数
-        let g:phpfmt_indent_with_space = 4
 
     "Ack"
     "系统中需要安装Ack"
@@ -90,6 +80,9 @@
         let g:DoxygenToolkit_blockFooter=""
         let g:DoxygenToolkit_authorName="Mathias Lorente"
         let g:DoxygenToolkit_licenseTag="My own license"
+
+    "VimBdo"
+        Plugin 'https://github.com/chawuciren/vim-bdo.git'
 
 
     " All of your Plugins must be added before the following line
@@ -208,7 +201,7 @@
         let yvt.keymap["gfl"] = {"nmap": "<C-w>l", "imap": "<Esc>l<C-w>l"}
         let yvt.keymap["gfm"] = {"nmap": ":bp!<CR>", "imap": "<Esc>l:bp!<CR>"}
         let yvt.keymap["gfn"] = {"nmap": ":bn!<CR>", "imap": "<Esc>l:bn!<CR>"}
-        let yvt.keymap["gfo"] = {"nmap": ":BcloseOthers<CR>"}
+        let yvt.keymap["gfo"] = {"nmap": ":Bdo<CR>"}
     "工具
         let yvt.keymap["ghs"] = {"nmap": "\:!find . -name \"*.swp\" \\| xargs rm -fj<CR>:!find . -name \"*.swo\" \\| xargs rm -fj"}
         "开启/关闭Tree控件"
@@ -235,20 +228,5 @@
             endfor
         endfor
     endfunction
-
-    command! BcloseOthers call <SID>BufCloseOthers()
-    function! <SID>BufCloseOthers()
-        let l:currentBufNum   = bufnr("%")
-        let l:alternateBufNum = bufnr("#")
-        for i in range(1,bufnr("$"))
-            if buflisted(i)
-                if i!=l:currentBufNum
-                    execute("bdelete ".i)
-                endif
-            endif
-        endfor
-    endfunction
-    map <leader>bdo :BcloseOthers<cr>
-    command! Bdo call <SID>BufCloseOthers()
 
     autocmd VimEnter * call BindKeyMap()
