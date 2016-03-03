@@ -2,12 +2,9 @@
 
 A vim one-click installation kits for `PHP`, with the least amount of steps to configure a full vim working environment.
 
-<br><br>
+<br>
 
 ###Installation
----
-
-<br>
 
 ```bash
 rm ~/.vim -rf
