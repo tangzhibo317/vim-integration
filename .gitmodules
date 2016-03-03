@@ -25,3 +25,6 @@
 [submodule "bundle/DoxygenToolkit.vim"]
 	path = bundle/DoxygenToolkit.vim
 	url = https://github.com/vim-scripts/DoxygenToolkit.vim.git
+[submodule "bundle/vim-phpfmt"]
+	path = bundle/vim-phpfmt
+	url = https://github.com/phpfmt/vim-phpfmt.git
