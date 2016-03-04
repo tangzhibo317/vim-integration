@@ -28,3 +28,6 @@
 [submodule "bundle/vim-phpfmt"]
 	path = bundle/vim-phpfmt
 	url = https://github.com/phpfmt/vim-phpfmt.git
+[submodule "bundle/vim-bdo"]
+	path = bundle/vim-bdo
+	url = https://github.com/chawuciren/vim-bdo
