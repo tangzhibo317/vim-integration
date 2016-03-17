@@ -31,19 +31,19 @@ git submodule update
 
 *Hotkeys*:
 
-Key | Desc
--- | --
-Ctrl+j j | The current line moves to the next line
-Ctrl+j k | The current line moves to the previous line
-Ctrl+j y | Copy current line and paste it to the next line
-Ctrl+j d | Delete the current line
-Ctrl+j n | At the tail completion `;` symbols and line breaks
-Ctrl+j m | At the tail completion `{` symbols and line breaks
-Ctrl+j l | Add a blank line
--- | --
-Ctrl+m y | Turn on/off the `NERDTree` plugin
-Ctrl+m u | Turn on/off the `TagBar` plugin
-Ctrl+m n | Open the next `buffer` in buffer list
-Ctrl+m b | Open the previous `buffer` in buffer list
-Ctrl+m s | Remove the `.swp` and `.swo` files in the directory
+| Key | Desc |
+| -- | -- |
+| Ctrl+j j | The current line moves to the next line |
+| Ctrl+j k | The current line moves to the previous line |
+| Ctrl+j y | Copy current line and paste it to the next line |
+| Ctrl+j d | Delete the current line |
+| Ctrl+j n | At the tail completion `;` symbols and line breaks |
+| Ctrl+j m | At the tail completion `{` symbols and line breaks |
+| Ctrl+j l | Add a blank line |
+| -- | -- |
+| Ctrl+m y | Turn on/off the `NERDTree` plugin |
+| Ctrl+m u | Turn on/off the `TagBar` plugin |
+| Ctrl+m n | Open the next `buffer` in buffer list |
+| Ctrl+m b | Open the previous `buffer` in buffer list |
+| Ctrl+m s | Remove the `.swp` and `.swo` files in the directory |
 
