@@ -1,6 +1,6 @@
-"========================================================
+"================================================================================
 "= Vundle插件管理配置
-"========================================================
+"================================================================================
 
 set nocompatible              " be iMproved, required
 filetype off                  " required
@@ -14,9 +14,11 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
 
-"--------------------------------------------------------
+
+"--------------------------------------------------------------------------------
 "- 插件
-"--------------------------------------------------------
+"--------------------------------------------------------------------------------
+
 "NERDTree树状目录
     Plugin 'https://github.com/scrooloose/nerdtree.git'
     "自动运行
@@ -46,6 +48,9 @@ Plugin 'gmarik/Vundle.vim'
     "显示Buf的序号
     let g:airline#extensions#tabline#buffer_nr_show = 1
     let g:airline_powerline_fonts = 1
+
+"AirLine主题
+    Plugin 'https://github.com/vim-airline/vim-airline-themes.git'
 
 "CtrlP 快速定位
     Plugin 'https://github.com/kien/ctrlp.vim.git'
@@ -98,26 +103,26 @@ Plugin 'gmarik/Vundle.vim'
 "PhpFmt PHP代码格式化
     Plugin 'https://github.com/phpfmt/vim-phpfmt.git'
 
-    let g:phpfmt_on_save = get(g:, 'phpfmt_on_save', 1) " format on save (autocmd)
-    let g:phpfmt_php_path = "/usr/local/php5/bin/php"               " Path to PHP
+    let g:phpfmt_on_save = get(g:, 'phpfmt_on_save', 0) " format on save (autocmd)
+    let g:phpfmt_php_path = 'php'   " Path to PHP
+    let g:phpfmt_config = expand('<sfile>:p:h') . '/.vim/.phpfmt.ini'
     "let g:phpfmt_prepasses_list = "AutoPreincrement,JointToImplode"
     "let g:phpfmt_passes_list = "ReturnNull"
     let g:phpfmt_enable_default_mapping = 1     " Enable the mapping by default (<leader>pcd)
+    autocmd FileType php noremap <buffer>  <C-j>f :call PhpFmtFixFile()<CR>
 
 "JsBeautify Javascript代码格式化
     Plugin 'https://github.com/maksimr/vim-jsbeautify.git'
 
-    "map <c-f> :call JsBeautify()<cr>
-    "" or
-    "autocmd FileType javascript noremap <buffer>  <c-f> :call JsBeautify()<cr>
-    "" for json
-    "autocmd FileType json noremap <buffer> <c-f> :call JsonBeautify()<cr>
-    "" for jsx
-    "autocmd FileType jsx noremap <buffer> <c-f> :call JsxBeautify()<cr>
-    "" for html
-    "autocmd FileType html noremap <buffer> <c-f> :call HtmlBeautify()<cr>
-    "" for css or scss
-    "autocmd FileType css noremap <buffer> <c-f> :call CSSBeautify()<cr>
+    autocmd FileType javascript noremap <buffer>  <C-j>f :call JsBeautify()<cr>
+    " for json
+    autocmd FileType json noremap <buffer> <C-j>f :call JsonBeautify()<cr>
+    " for jsx
+    autocmd FileType jsx noremap <buffer> <C-j>f :call JsxBeautify()<cr>
+    " for html
+    autocmd FileType html noremap <buffer> <C-j>f :call HtmlBeautify()<cr>
+    " for css or scss
+    autocmd FileType css noremap <buffer> <C-j>f :call CSSBeautify()<cr>
 
 
 " All of your Plugins must be added before the following line
@@ -136,9 +141,9 @@ filetype plugin indent on    " required
 " Put your non-Plugin stuff after this lined
 
 
-"========================================================
+"================================================================================
 "= 配色方案
-"========================================================
+"================================================================================
 
 syntax enable
 let g:solarized_termcolors=256
@@ -149,9 +154,9 @@ set background=dark
 colorscheme Tomorrow-Night
 
 
-"========================================================
+"================================================================================
 "= 编辑器配置
-"========================================================
+"================================================================================
 
 "显示光标当前位置
 set ruler
@@ -203,13 +208,14 @@ set colorcolumn=120
 
 
 
-"========================================================
+"================================================================================
 "= 快捷键
-"========================================================
+"================================================================================
 
-"--------------------------------------------------------
+"--------------------------------------------------------------------------------
 "- 按键定义
-"--------------------------------------------------------
+"--------------------------------------------------------------------------------
+
 "编辑
     let yvt = {}
     let yvt.keymap = {}
@@ -232,15 +238,19 @@ set colorcolumn=120
     "删除当前单词
 "工具
     "清除编辑缓存
-    let yvt.keymap["ghs"] = {"key": "<C-h>s", "nmap": "\:!find . -name \"*.swp\" \\| xargs rm -fj<CR>:!find . -name \"*.swo\" \\| xargs rm -fj"}
+    let yvt.keymap["CleanUpSwFile"] = {"key": "<C-m>s", "nmap": "\:!find . -name \"*.swp\" \\| xargs rm -fj<CR>:!find . -name \"*.swo\" \\| xargs rm -fj"}
     "开启/关闭Tree控件"
-    let yvt.keymap["ghb"] = {"key": "<C-h>b", "nmap": ":NERDTreeToggle<CR>", "imap": "<Esc>l:NERDTreeToggle<CR>"}
-    let yvt.keymap["ghn"] = {"key": "<C-h>n", "nmap": ":TagbarToggle<CR>", "imap": "<Esc>l:TagbarToggle<CR>"}
+    let yvt.keymap["OpenNerdTree"] = {"key": "<C-m>y", "nmap": ":NERDTreeToggle<CR>", "imap": "<Esc>l:NERDTreeToggle<CR>"}
+    let yvt.keymap["OpenTagbar"] = {"key": "<C-m>u", "nmap": ":TagbarToggle<CR>", "imap": "<Esc>l:TagbarToggle<CR>"}
+    "定位到上一个／下一个buffer
+    let yvt.keymap["OpenNextBuffer"] = {"key": "<C-m>n", "nmap": ":Bn<CR>"}
+    let yvt.keymap["OpenPrevBuffer"] = {"key": "<C-m>b", "nmap": ":Bp<CR>"}
 
 
-"--------------------------------------------------------
+"--------------------------------------------------------------------------------
 "- 快捷键函数
-"--------------------------------------------------------
+"--------------------------------------------------------------------------------
+
 function! YVimIntGetKeyCommand(mapindex, mode)
     let s:command = g:yvt["keymap"][a:mapindex][a:mode]
     return s:command
