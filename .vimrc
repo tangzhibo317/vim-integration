@@ -5,10 +5,10 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
-" set the runtime path to include Vundle and initialize
+"set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
+"alternatively, pass a path where Vundle should install plugins
 "call vundle#begin('~/some/path/here')
 
 " let Vundle manage Vundle, required
@@ -34,7 +34,7 @@ Plugin 'gmarik/Vundle.vim'
     Plugin 'https://github.com/majutsushi/tagbar.git'
     let g:tagbar_ctags_bin='/usr/bin/ctags'
     let g:tagbar_width=20
-    "autocmd VimEnter * TagbarToggle 
+    "autocmd VimEnter * TagbarToggle
 
 "AirLine窗口美化
 "需要安装powerline字体"
@@ -89,13 +89,13 @@ Plugin 'gmarik/Vundle.vim'
 "DoxygenToolkit 注释
     Plugin 'https://github.com/vim-scripts/DoxygenToolkit.vim.git'
 
-    let g:DoxygenToolkit_briefTag_pre="@Synopsis  "
-    let g:DoxygenToolkit_paramTag_pre="@Param "
-    let g:DoxygenToolkit_returnTag="@Returns   "
+    let g:DoxygenToolkit_briefTag_pre="@brief"
+    let g:DoxygenToolkit_paramTag_pre="@param "
+    let g:DoxygenToolkit_returnTag="@return "
     let g:DoxygenToolkit_blockHeader=""
     let g:DoxygenToolkit_blockFooter=""
-    let g:DoxygenToolkit_authorName="Mathias Lorente"
-    let g:DoxygenToolkit_licenseTag="My own license"
+    let g:DoxygenToolkit_authorName="Your name"
+    let g:DoxygenToolkit_licenseTag="Your license"
 
 "VimBdo 安全管快速关闭buffer
     Plugin 'https://github.com/chawuciren/vim-bdo.git'
@@ -125,7 +125,7 @@ Plugin 'gmarik/Vundle.vim'
     autocmd FileType css noremap <buffer> <C-j>f :call CSSBeautify()<cr>
 
 
-" All of your Plugins must be added before the following line
+"All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
 " To ignore plugin indent changes, instead use:
