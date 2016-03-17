@@ -1,10 +1,12 @@
-#vim-integration
+vim-integration
+===
 
 A vim one-click installation kits for `PHP`, with the least amount of steps to configure a full vim working environment.
 
 <br>
 
-###Installation
+Installation
+---
 
 *According to the following steps to install the installation package to the system*
 
@@ -27,12 +29,13 @@ git submodule update
 
 <br><br>
 
-###Documentation
+Documentation
+---
 
 *Hotkeys*:
 
 | Key | Desc |
-| -- | -- |
+| --- | --- |
 | Ctrl+j j | The current line moves to the next line |
 | Ctrl+j k | The current line moves to the previous line |
 | Ctrl+j y | Copy current line and paste it to the next line |
@@ -40,7 +43,6 @@ git submodule update
 | Ctrl+j n | At the tail completion `;` symbols and line breaks |
 | Ctrl+j m | At the tail completion `{` symbols and line breaks |
 | Ctrl+j l | Add a blank line |
-| -- | -- |
 | Ctrl+m y | Turn on/off the `NERDTree` plugin |
 | Ctrl+m u | Turn on/off the `TagBar` plugin |
 | Ctrl+m n | Open the next `buffer` in buffer list |
