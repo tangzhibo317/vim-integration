@@ -31,3 +31,6 @@
 [submodule "bundle/vim-bdo"]
 	path = bundle/vim-bdo
 	url = https://github.com/chawuciren/vim-bdo
+[submodule "bundle/vim-jsbeautify"]
+	path = bundle/vim-jsbeautify
+	url = https://github.com/maksimr/vim-jsbeautify.git
