@@ -8,7 +8,7 @@ A vim one-click installation kits for `PHP`, with the least amount of steps to c
 Installation
 ---
 
-*According to the following steps to install the installation package to the system*
+**According to the following steps to install the installation package to the system**
 
 ```bash
 rm ~/.vim -rf
@@ -32,7 +32,7 @@ git submodule update
 Documentation
 ---
 
-*Hotkeys*:
+**Hotkeys**:
 
 | Key | Desc |
 | --- | --- |
