@@ -27,7 +27,7 @@
 	url = https://github.com/vim-scripts/DoxygenToolkit.vim.git
 [submodule "bundle/vim-phpformat"]
 	path = bundle/vim-phpformat
-	url = https://github.com/chawuciren/vim-phpformat.git
+	url = https://github.com/chawuciren/vim-phpformat
 [submodule "bundle/vim-bdo"]
 	path = bundle/vim-bdo
 	url = https://github.com/chawuciren/vim-bdo
