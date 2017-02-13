@@ -101,7 +101,8 @@ Plugin 'gmarik/Vundle.vim'
     Plugin 'https://github.com/chawuciren/vim-bdo.git'
 
 "PhpFmt PHP代码格式化
-    Plugin 'https://github.com/phpfmt/vim-phpfmt.git'
+    "Plugin 'https://github.com/phpfmt/vim-phpfmt.git'
+    Plugin 'https://github.com/chawuciren/vim-phpformat.git'
 
     let g:phpfmt_on_save = get(g:, 'phpfmt_on_save', 0) " format on save (autocmd)
     let g:phpfmt_php_path = 'php'   " Path to PHP
