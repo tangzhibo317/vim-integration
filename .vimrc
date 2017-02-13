@@ -89,24 +89,29 @@ Plugin 'gmarik/Vundle.vim'
 "DoxygenToolkit 注释
     Plugin 'https://github.com/vim-scripts/DoxygenToolkit.vim.git'
 
-    let g:DoxygenToolkit_briefTag_pre="@brief"
+    let g:DoxygenToolkit_briefTag_pre="@brief "
     let g:DoxygenToolkit_paramTag_pre="@param "
     let g:DoxygenToolkit_returnTag="@return "
+    let g:DoxygenToolkit_authorTag = "@author "
     let g:DoxygenToolkit_blockHeader=""
     let g:DoxygenToolkit_blockFooter=""
-    let g:DoxygenToolkit_authorName="Your name"
-    let g:DoxygenToolkit_licenseTag="Your license"
+    let g:DoxygenToolkit_authorName="yxn"
+    let g:DoxygenToolkit_licenseTag="1.0"
 
 "VimBdo 安全管快速关闭buffer
     Plugin 'https://github.com/chawuciren/vim-bdo.git'
 
+"Vim-go golang插件
+    Plugin 'https://github.com/fatih/vim-go.git'
+    let g:go_fmt_autosave = 0
+    let g:go_play_open_browser = 0
+
 "PhpFmt PHP代码格式化
-    "Plugin 'https://github.com/phpfmt/vim-phpfmt.git'
-    Plugin 'https://github.com/chawuciren/vim-phpformat.git'
+    Plugin 'https://github.com/phpfmt/vim-phpfmt.git'
 
     let g:phpfmt_on_save = get(g:, 'phpfmt_on_save', 0) " format on save (autocmd)
-    let g:phpfmt_php_path = 'php'   " Path to PHP
     let g:phpfmt_config = expand('<sfile>:p:h') . '/.vim/.phpfmt.ini'
+    let g:phpfmt_php_path = 'php'   " Path to PHP
     "let g:phpfmt_prepasses_list = "AutoPreincrement,JointToImplode"
     "let g:phpfmt_passes_list = "ReturnNull"
     let g:phpfmt_enable_default_mapping = 1     " Enable the mapping by default (<leader>pcd)
@@ -121,9 +126,6 @@ Plugin 'gmarik/Vundle.vim'
     " for jsx
     autocmd FileType jsx noremap <buffer> <C-j>f :call JsxBeautify()<cr>
     " for html
-    autocmd FileType html noremap <buffer> <C-j>f :call HtmlBeautify()<cr>
-    " for css or scss
-    autocmd FileType css noremap <buffer> <C-j>f :call CSSBeautify()<cr>
 
 
 "All of your Plugins must be added before the following line
@@ -231,7 +233,7 @@ set colorcolumn=120
     "删除当前行"
     let yvt.keymap["DelCurrentLine"] = {"key": "<C-j>d", "nmap": "dd", "imap": "<Esc>lddi"}
     "在行尾补全句号并另起一行
-    let yvt.keymap["EndLineDown"] = {"key": "<C-j>n", "nmap": "$a;<CR><Esc>", "imap": "<Esc>l$a;<CR>"}
+    let yvt.keymap["EndLineDown"] = {"key": "<C-j>n", "nmap": "$a;<CR><Esc>", "imap": "<Esc>$a;<CR>"}
     "在行尾补全花括号并另起一行
     let yvt.keymap["EndLineBlockDown"] = {"key": "<C-j>m", "nmap": "$a {<CR><Esc>", "imap": "<Esc>l$a {<CR>"}
     "增加空行"
@@ -241,8 +243,8 @@ set colorcolumn=120
     "清除编辑缓存
     let yvt.keymap["CleanUpSwFile"] = {"key": "<C-m>s", "nmap": "\:!find . -name \"*.swp\" \\| xargs rm -fj<CR>:!find . -name \"*.swo\" \\| xargs rm -fj"}
     "开启/关闭Tree控件"
-    let yvt.keymap["OpenNerdTree"] = {"key": "<C-m>y", "nmap": ":NERDTreeToggle<CR>", "imap": "<Esc>l:NERDTreeToggle<CR>"}
-    let yvt.keymap["OpenTagbar"] = {"key": "<C-m>u", "nmap": ":TagbarToggle<CR>", "imap": "<Esc>l:TagbarToggle<CR>"}
+    let yvt.keymap["OpenNerdTree"] = {"key": "<C-m>y", "nmap": ":NERDTreeToggle<CR>"}
+    let yvt.keymap["OpenTagbar"] = {"key": "<C-m>u", "nmap": ":TagbarToggle<CR>"}
     "定位到上一个／下一个buffer
     let yvt.keymap["OpenNextBuffer"] = {"key": "<C-m>n", "nmap": ":Bn<CR>"}
     let yvt.keymap["OpenPrevBuffer"] = {"key": "<C-m>b", "nmap": ":Bp<CR>"}
@@ -268,8 +270,11 @@ function! YVimIntBindKeyMap()
         let s:key = g:yvt["keymap"][mapindex]["key"]
         let s:keymap = g:yvt["keymap"][mapindex]
         for mode in keys(s:keymap)
-            if mode != "key"
-                let s:execommand = mode . " " . s:key . " " . YVimIntGetKeyCommand(mapindex, mode) . " :call YVimIntRunKeyCommand('" . mapindex . "','" . mode . "')<CR>"
+            if mode == "nmap"
+                let s:execommand = mode . " " . s:key . " " . YVimIntGetKeyCommand(mapindex, mode) . ":call YVimIntRunKeyCommand('" . mapindex . "','" . mode . "')<CR>"
+                exe s:execommand
+            elseif mode == "imap"
+                let s:execommand = mode . " " . s:key . " " . YVimIntGetKeyCommand(mapindex, mode) . "<Esc>:call YVimIntRunKeyCommand('" . mapindex . "','" . mode . "')<CR>a"
                 exe s:execommand
             else
             endif
@@ -279,3 +284,4 @@ endfunction
 
 "执行绑定快捷键
 autocmd VimEnter * call YVimIntBindKeyMap()
+
