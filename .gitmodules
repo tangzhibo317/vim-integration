@@ -25,9 +25,6 @@
 [submodule "bundle/DoxygenToolkit.vim"]
 	path = bundle/DoxygenToolkit.vim
 	url = https://github.com/vim-scripts/DoxygenToolkit.vim.git
-[submodule "bundle/vim-phpformat"]
-	path = bundle/vim-phpformat
-	url = https://github.com/chawuciren/vim-phpformat
 [submodule "bundle/vim-bdo"]
 	path = bundle/vim-bdo
 	url = https://github.com/chawuciren/vim-bdo
@@ -37,3 +34,6 @@
 [submodule "bundle/vim-airline-themes"]
 	path = bundle/vim-airline-themes
 	url = https://github.com/vim-airline/vim-airline-themes
+[submodule "bundle/vim-phpformat"]
+	path = bundle/vim-phpformat
+	url = https://github.com/chawuciren/vim-phpformat
