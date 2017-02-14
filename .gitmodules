@@ -37,3 +37,6 @@
 [submodule "bundle/vim-phpformat"]
 	path = bundle/vim-phpformat
 	url = https://github.com/chawuciren/vim-phpformat
+[submodule "bundle/vim-go"]
+	path = bundle/vim-go
+	url = https://github.com/fatih/vim-go.git
