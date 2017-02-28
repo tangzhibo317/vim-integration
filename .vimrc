@@ -189,7 +189,7 @@ syntax on
 "set smartindent
 set autoindent
 "在windows版本中vim的退格键模式默认与vi兼容，与我们的使用习惯不太符合，下边这条可以改过来 "
-"set backspace=indent,eol,start 
+set backspace=indent,eol,start 
 "制表符占4个空格
 set tabstop=4 
 "将tab换成4个空格
