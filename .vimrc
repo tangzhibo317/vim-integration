@@ -118,6 +118,7 @@ Plugin 'gmarik/Vundle.vim'
     autocmd FileType php noremap <buffer>  <C-j>f :call PhpFmtFixFile()<CR>
 
 "JsBeautify Javascript代码格式化
+    Plugin 'https://github.com/editorconfig/editorconfig-vim'
     Plugin 'https://github.com/maksimr/vim-jsbeautify.git'
 
     autocmd FileType javascript noremap <buffer>  <C-j>f :call JsBeautify()<cr>
@@ -126,6 +127,27 @@ Plugin 'gmarik/Vundle.vim'
     " for jsx
     autocmd FileType jsx noremap <buffer> <C-j>f :call JsxBeautify()<cr>
     " for html
+    autocmd FileType html noremap <buffer> <C-j>f :call HtmlBeautify()<cr>
+    " for css
+    autocmd FileType css noremap <buffer> <C-j>f :call CSSBeautify()<cr>
+
+"Smartim 解决中文输入法命令失效问题
+    Plugin 'https://github.com/ybian/smartim'
+
+"Vim-multiple-cursors 多光标选择
+"    Plugin 'https://github.com/terryma/vim-multiple-cursors'
+
+"支持多种Js库的语法高亮
+    Plugin 'https://github.com/othree/javascript-libraries-syntax.vim'
+    let g:used_javascript_libs = 'jquery,react,vue'
+
+"支持Xml/Html的标签闭合
+    Plugin 'https://github.com/othree/xml.vim'
+
+"实时显示css的颜色
+    Plugin 'https://github.com/JulesWang/css.vim'
+    Plugin 'https://github.com/cakebaker/scss-syntax.vim'
+
 
 
 "All of your Plugins must be added before the following line
