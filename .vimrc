@@ -144,9 +144,8 @@ Plugin 'gmarik/Vundle.vim'
 "支持Xml/Html的标签闭合
     Plugin 'https://github.com/othree/xml.vim'
 
-"实时显示css的颜色
-    Plugin 'https://github.com/JulesWang/css.vim'
-    Plugin 'https://github.com/cakebaker/scss-syntax.vim'
+"Vim-vue 支持vue的高亮
+    Plugin 'https://github.com/posva/vim-vue'
 
 
 
