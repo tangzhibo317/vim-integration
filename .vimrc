@@ -201,21 +201,17 @@
     "----------------------------------------------------------------------------
     Plugin 'https://github.com/posva/vim-vue'
 
-    "vim-easymotion 快速移动
+    "----------------------------------------------------------------------------
+    "- vim-easymotion 快速移动
+    "----------------------------------------------------------------------------
     Plugin 'https://github.com/easymotion/vim-easymotion'
     map <C-j>s <Plug>(easymotion-prefix)
 
-    "vim-smooth-scroll 平滑滚动
-    "其实一点都不平滑 看久了眼睛疼 还不如直接翻页
-    "Plugin 'https://github.com/terryma/vim-smooth-scroll'
-    "noremap <silent> <c-u> :call smooth_scroll#up(&scroll, 0, 2)<CR>
-    "noremap <silent> <c-d> :call smooth_scroll#down(&scroll, 0, 2)<CR>
-    "noremap <silent> <c-b> :call smooth_scroll#up(&scroll*2, 0, 4)<CR>
-    "noremap <silent> <c-f> :call smooth_scroll#down(&scroll*2, 0, 4)<CR>
-
+    "----------------------------------------------------------------------------
+    "- 让tagbar支持protobuf
+    "----------------------------------------------------------------------------
     " 让tagbar支持protobuf
     Plugin 'https://github.com/tenfyzhong/tagbar-proto.vim'
-    Plugin 'https://github.com/Backaway/protobuf.vim'
 
 
 
