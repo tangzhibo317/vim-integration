@@ -3,6 +3,8 @@ VimBox
 
 A vim one-click installation kits for `PHP`, with the least amount of steps to configure a full vim working environment.
 
+![vim box logo](https://raw.githubusercontent.com/chawuciren/vim-box/master/doc/images/logo.png)
+
 
 
 <br>
