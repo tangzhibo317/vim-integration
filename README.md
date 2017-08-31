@@ -41,7 +41,7 @@ $ cd ~/.vim
 
 $ git clone https://github.com/chawuciren/vim-box.git ./
 
-$ ln -s ~/.vim/vimrc ~/.vimrc
+$ ln -s ~/.vim/.vimrc ~/.vimrc
 
 $ git submodule init
 
