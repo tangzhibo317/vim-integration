@@ -1,15 +1,14 @@
+
+![vim box logo](https://raw.githubusercontent.com/chawuciren/vim-box/master/doc/images/logo.png)
+
+<br>
+
 VimBox
 ===
 
 一个定位于 PHP 开发的轻量 Vim 配置包，只包含开发中必要的部分插件，并定义开发中高频使用的一些操作的快捷键。
 
 安装方便开箱即用。适合用于快速部署服务器等环境所需的 Vim 或刚接触 Vim 想要快速上手的朋友尝试。
-
-<br>
-
-![vim box logo](https://raw.githubusercontent.com/chawuciren/vim-box/master/doc/images/logo.png)
-
-
 
 <br>
 
