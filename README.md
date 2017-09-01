@@ -31,6 +31,7 @@ VimBox
 1. 进入用户的 home 目录，执行下面命令：
 
 ```bash
+
 $ cd ~
 
 $ rm ~/.vim -rf
