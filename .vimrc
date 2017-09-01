@@ -183,13 +183,7 @@
     "- Vim-multiple-cursors 多光标选择
     "----------------------------------------------------------------------------
     "快捷键冲突，暂时关闭
-    "Plugin 'https://github.com/terryma/vim-multiple-cursors'
-
-    "----------------------------------------------------------------------------
-    "- 支持多种Js库的语法高亮
-    "----------------------------------------------------------------------------
-    Plugin 'https://github.com/othree/javascript-libraries-syntax.vim'
-    let g:used_javascript_libs = 'jquery,react,vue'
+    Plugin 'https://github.com/terryma/vim-multiple-cursors'
 
     "----------------------------------------------------------------------------
     "- 支持Xml/Html的标签闭合
@@ -208,9 +202,13 @@
     map <C-j>s <Plug>(easymotion-prefix)
 
     "----------------------------------------------------------------------------
-    "- 让tagbar支持protobuf
+    "- 让tagbar支持Protobuf
     "----------------------------------------------------------------------------
-    " 让tagbar支持protobuf
+    Plugin 'https://github.com/uarun/vim-protobuf'
+
+    "----------------------------------------------------------------------------
+    "- Protobuf 的语法高亮
+    "----------------------------------------------------------------------------
     Plugin 'https://github.com/tenfyzhong/tagbar-proto.vim'
 
 

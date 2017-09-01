@@ -18,10 +18,11 @@ VimBox
 
 *安装前请先确认你的环境中已经安装了下面列表中所需的依赖*
 
-1. PHP7
-2. Node.js
-3. ack
-4. js-beautify
+1. Vim7.4
+2. PHP7.1
+3. Node.js
+4. ack
+5. js-beautify
 
 <br>
 
@@ -41,6 +42,8 @@ $ cd ~/.vim
 
 $ git clone https://github.com/chawuciren/vim-box.git ./
 
+$ rm ~/.vimrc
+
 $ ln -s ~/.vim/.vimrc ~/.vimrc
 
 $ git submodule init
@@ -58,6 +61,8 @@ $ vim
 3. 使用 Vundle 安装所有插件，在 Vim 中执行下面命令：
 
 ```bash
+:VundleClean
+
 :VundleInstall
 ```
 
@@ -77,10 +82,11 @@ $ vim
 | Ctrl+j n | 在行尾添加 `;` 符号并换行 |
 | Ctrl+j m | 在行尾添加 `{` 符号并换行 |
 | Ctrl+j l | 直接换行 |
+| Ctrl+j f | 格式化当前代码 (支持 *.js, *.html, *.css, *.php) |
 | Ctrl+m y | 打开/关闭 `NERDTree` 插件 |
 | Ctrl+m u | 打开/关闭 `TagBar` 插件|
-| Ctrl+m n | 切换到 `buffer 列表` 中的下一个 `buffer` |
-| Ctrl+m b | 切换到 `buffer 列表` 中的上一个 `buffer` |
+| Ctrl+m n | 切换到 `buffer 列表` 中的下一个 `buffer` (顶部标签栏的标签切换) |
+| Ctrl+m b | 切换到 `buffer 列表` 中的上一个 `buffer` (顶部标签栏的标签切换) |
 | Ctrl+m s | 清空当前项目目录下的 `.swp` and `.swo` 文件 |
 | Ctrl+n | 重复执行上一步的快捷键 |
 
