@@ -79,8 +79,8 @@ $ vim
 | Ctrl+j k | 将当前行移动到上一行 |
 | Ctrl+j y | 复制当前行，并在后面一行粘贴 |
 | Ctrl+j d | 删除当前行 |
-| Ctrl+j n | 在行尾添加 `;` 符号并换行 |
-| Ctrl+j m | 在行尾添加 `{` 符号并换行 |
+| Ctrl+j c; | 在行尾添加 `;` 符号并换行 |
+| Ctrl+j c{ | 在行尾添加 `{` 符号并换行 |
 | Ctrl+j l | 直接换行 |
 | Ctrl+j f | 格式化当前代码 (支持 *.js, *.html, *.css, *.php) |
 | Ctrl+m y | 打开/关闭 `NERDTree` 插件 |
