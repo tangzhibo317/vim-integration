@@ -178,6 +178,8 @@
     autocmd FileType html noremap <buffer> <C-j>f :call HtmlBeautify()<cr>
     "格式化.css类型的文件的快捷键
     autocmd FileType css noremap <buffer> <C-j>f :call CSSBeautify()<cr>
+    "格式化.go类型的文件的快捷键
+    autocmd FileType go noremap <buffer> <C-j>f :GoFmt<cr>
 
     "----------------------------------------------------------------------------
     "- Vim-multiple-cursors 多光标选择
