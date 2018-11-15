@@ -134,7 +134,7 @@
     let g:DoxygenToolkit_authorTag = "@author "
     let g:DoxygenToolkit_blockHeader=""
     let g:DoxygenToolkit_blockFooter=""
-    let g:DoxygenToolkit_authorName="yxn"
+    let g:DoxygenToolkit_authorName="chawuciren"
     let g:DoxygenToolkit_licenseTag="1.0"
 
     "----------------------------------------------------------------------------
@@ -213,6 +213,10 @@
     "----------------------------------------------------------------------------
     Plugin 'https://github.com/tenfyzhong/tagbar-proto.vim'
 
+    "----------------------------------------------------------------------------
+    "- 缩进美化插件
+    "----------------------------------------------------------------------------
+    Plugin 'https://github.com/Yggdroot/indentLine'
 
 
 
@@ -248,7 +252,8 @@
     set background=dark
 
     "配色方案名称，所有配色方案放在colors目录下，填写对应名称即可
-    colorscheme Tomorrow-Night
+    "colorscheme Tomorrow-Night
+    colorscheme Tomorrow-Night-Eighties
 
 
 "================================================================================
@@ -299,7 +304,8 @@
     "高亮搜索 "
     set hlsearch
     "显示Tab符号"
-    set list listchars=tab:\|-,trail:-
+    "set list listchars=tab:\|-,trail:-
+    set list listchars=tab:\|\ ,trail:\ 
     "设置标尺
     set colorcolumn=120
 
