@@ -253,14 +253,15 @@
 "配色方案名称，所有配色方案放在colors目录下，填写对应名称即可
 
     syntax enable
-"    let g:solarized_termcolors=256
+    let g:solarized_termcolors=256
     set t_Co=256
     set background=dark
     "colorscheme Tomorrow-Night
+    colorscheme Tomorrow-Night-Eighties
 
 "    let g:molokai_original=1
 "    let g:rehash256=1
-    colorscheme gruvbox
+    "colorscheme gruvbox
 "    let g:solarized_termcolors=16
 "     colorscheme desert
 
