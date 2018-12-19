@@ -134,7 +134,7 @@
     let g:DoxygenToolkit_authorTag = "@author "
     let g:DoxygenToolkit_blockHeader=""
     let g:DoxygenToolkit_blockFooter=""
-    let g:DoxygenToolkit_authorName="chawuciren"
+    let g:DoxygenToolkit_authorName="yxn"
     let g:DoxygenToolkit_licenseTag="1.0"
 
     "----------------------------------------------------------------------------
@@ -143,6 +143,15 @@
     Plugin 'https://github.com/fatih/vim-go.git'
     let g:go_fmt_autosave = 0
     let g:go_play_open_browser = 0
+
+    "----------------------------------------------------------------------------
+    "- indentLine 缩进线插件
+    "----------------------------------------------------------------------------
+    Plugin 'https://github.com/Yggdroot/indentLine.git'
+    let g:indentLine_color_term=239
+"    let g:indentLine_setColors = 0
+"    let g:indentLine_bgcolor_term = 202
+"    let g:indentLine_bgcolor_gui = '#FF5F00'
 
     "----------------------------------------------------------------------------
     "- vim-phpfmt PHP代码格式化
@@ -178,14 +187,18 @@
     autocmd FileType html noremap <buffer> <C-j>f :call HtmlBeautify()<cr>
     "格式化.css类型的文件的快捷键
     autocmd FileType css noremap <buffer> <C-j>f :call CSSBeautify()<cr>
-    "格式化.go类型的文件的快捷键
-    autocmd FileType go noremap <buffer> <C-j>f :GoFmt<cr>
 
     "----------------------------------------------------------------------------
     "- Vim-multiple-cursors 多光标选择
     "----------------------------------------------------------------------------
     "快捷键冲突，暂时关闭
-    Plugin 'https://github.com/terryma/vim-multiple-cursors'
+    "Plugin 'https://github.com/terryma/vim-multiple-cursors'
+
+    "----------------------------------------------------------------------------
+    "- 支持多种Js库的语法高亮
+    "----------------------------------------------------------------------------
+    Plugin 'https://github.com/othree/javascript-libraries-syntax.vim'
+    let g:used_javascript_libs = 'jquery,react,vue'
 
     "----------------------------------------------------------------------------
     "- 支持Xml/Html的标签闭合
@@ -204,19 +217,11 @@
     map <C-j>s <Plug>(easymotion-prefix)
 
     "----------------------------------------------------------------------------
-    "- 让tagbar支持Protobuf
+    "- 让tagbar支持protobuf
     "----------------------------------------------------------------------------
-    Plugin 'https://github.com/uarun/vim-protobuf'
-
-    "----------------------------------------------------------------------------
-    "- Protobuf 的语法高亮
-    "----------------------------------------------------------------------------
+    " 让tagbar支持protobuf
     Plugin 'https://github.com/tenfyzhong/tagbar-proto.vim'
 
-    "----------------------------------------------------------------------------
-    "- 缩进美化插件
-    "----------------------------------------------------------------------------
-    Plugin 'https://github.com/Yggdroot/indentLine'
 
 
 
@@ -245,15 +250,20 @@
 "================================================================================
 "= 配色方案
 "================================================================================
+"配色方案名称，所有配色方案放在colors目录下，填写对应名称即可
 
     syntax enable
-    let g:solarized_termcolors=256
+"    let g:solarized_termcolors=256
     set t_Co=256
     set background=dark
-
-    "配色方案名称，所有配色方案放在colors目录下，填写对应名称即可
     "colorscheme Tomorrow-Night
-    colorscheme Tomorrow-Night-Eighties
+
+"    let g:molokai_original=1
+"    let g:rehash256=1
+    colorscheme gruvbox
+"    let g:solarized_termcolors=16
+"     colorscheme desert
+
 
 
 "================================================================================
@@ -263,8 +273,8 @@
     "显示光标当前位置
     set ruler
     "高亮显示当前行/列
-    set cursorline
-    set cursorcolumn
+ "   set cursorline
+ "   set cursorcolumn
     "高亮显示搜索结果
     set hlsearch
     "禁止折行
@@ -277,7 +287,7 @@
     "设置搜索忽略大小写
     set ignorecase
     "设置背景色，每种配色有两种方案，一个light、一个dark "
-    set background=dark
+"    set background=dark
     "默认不生成备份文件
     set nobackup
     "显示行号
@@ -304,8 +314,7 @@
     "高亮搜索 "
     set hlsearch
     "显示Tab符号"
-    "set list listchars=tab:\|-,trail:-
-    set list listchars=tab:\|\ ,trail:\ 
+    set list listchars=tab:\|-,trail:-
     "设置标尺
     set colorcolumn=120
 
